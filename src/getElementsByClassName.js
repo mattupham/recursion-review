@@ -9,14 +9,14 @@ var getElementsByClassName = function(className) {
   //output: array of Nodes
 
   //node can have multiple classes, so we need to see if node includes classnames
-  var results = [];
+  var nodesWithClassName = [];
 
   var traverseChildNodes = function(node) {
     //does array classList contains classname
     if (node.classList) {
-      //if so, add to results
+      //if so, add to nodesWithClassName
       if (node.classList.contains(className)) {
-        results.push(node);
+        nodesWithClassName.push(node);
       }
     }
     //does node have children
@@ -28,6 +28,6 @@ var getElementsByClassName = function(className) {
     }
   };
   traverseChildNodes(document.body);
-  return results;
+  return nodesWithClassName;
 };
 
